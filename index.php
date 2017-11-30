@@ -14,7 +14,7 @@
 <div id="map-details">
 	<div class="detail-title">
 		<h3> <b>Street Light Monitoring </b></h3>
-		<p style="text-align:right"><small> powered by OpenShift </small></p>
+		<p style="text-align:right"><small> Operated on TMRnD Container Platform </small></p>
 	</div>
 	<ul id="server-details" class="list-group">
 	</ul>
@@ -24,7 +24,7 @@
 <!-- snip -->
 <div id="dom-target" style="display: none;">
     <?php 
-        $output = gethostname();
+        $output = $_SERVER['SERVER_ADDR']; //gethostname();
         echo htmlspecialchars($output); 
     ?>
 </div>
@@ -43,9 +43,9 @@
     var hostname = div.textContent;
     
 	new PNotify({
-	  title: "Container Host",
+	  title: "Street Light Monitoring Map",
 	  type: "info",
-	  text: "This application uses "+hostname+" hostname",
+	  text: "This application run on host: <b> "+hostname+"</b>",
 	  addclass: 'dark',
 	  styling: 'bootstrap3',
 	  hide: false,
